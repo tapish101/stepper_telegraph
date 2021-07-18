@@ -18,6 +18,9 @@ void setup() {
   Serial.begin(9600);
   pinMode(homepin, INPUT);
   pinMode(dotpin, OUTPUT);
+ //uncomment both the lines to test without bluetooth
+ //Home();    //also take a look at Home(), you have to change steps to make it work
+ //printString("Random!");
 }
 
 
@@ -111,5 +114,5 @@ void Home(){
   while(digitalRead(homepin) == LOW){
     stepperx.step(-1);
   }
-  stepperx.step(45);
+  stepperx.step(45); //change steps value to make sure your pen lands at the start of page where you want to start writing
 }
